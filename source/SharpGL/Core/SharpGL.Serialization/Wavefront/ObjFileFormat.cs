@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -169,6 +169,8 @@ namespace SharpGL.Serialization.Wavefront
                     {
                         //  Get the texture coord strings.
                         string[] values = line.Substring(3).Split(split, StringSplitOptions.RemoveEmptyEntries);
+                        values[0] = values[0].Replace(".", ",");
+                        values[1] = values[1].Replace(".", ",");
 
                         //  Parse texture coordinates.
                         float u = float.Parse(values[0]);
@@ -185,6 +187,9 @@ namespace SharpGL.Serialization.Wavefront
                     {
                         //  Get the normal coord strings.
                         string[] values = line.Substring(3).Split(split, StringSplitOptions.RemoveEmptyEntries);
+                        values[0] = values[0].Replace(".", ",");
+                        values[1] = values[1].Replace(".", ",");
+                        values[2] = values[2].Replace(".", ",");
 
                         //  Parse normal coordinates.
                         float x = float.Parse(values[0]);
@@ -202,6 +207,9 @@ namespace SharpGL.Serialization.Wavefront
                     {
                         //  Get the vertex coord strings.
                         string[] values = line.Substring(2).Split(split, StringSplitOptions.RemoveEmptyEntries);
+                        values[0] = values[0].Replace(".", ",");
+                        values[1] = values[1].Replace(".", ",");
+                        values[2] = values[2].Replace(".", ",");
 
                         //  Parse vertex coordinates.
                         float x = float.Parse(values[0]);
